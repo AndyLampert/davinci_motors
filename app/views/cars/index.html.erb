@@ -1,0 +1,10 @@
+<%= link_to 'New Car', new_car_path %>
+<%#= link_to 'Edit Car', edit_car_path(@car.id) %>
+
+<% @cars.each do |car| %>
+  <% car.make %>
+  <% car.model %>
+  <% car.year %>
+  <% car.price %>
+  <%= link_to 'Edit', edit_car_path(car) %>
+<% end %>

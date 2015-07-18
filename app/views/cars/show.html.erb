@@ -1,0 +1,30 @@
+
+<% if @cars %>
+  <% @cars.each do |car| %>
+    <% car.make %>
+    <% car.model %>
+    <% car.year %>
+    <% car.price %>
+    <%#= link_to 'Edit', edit_car_path(@car.id, @car) %>
+  <% end %>
+<% else %>
+  <%= form_for(@car) do |f| %>
+    <p>
+      <%= f.label :make %>
+      <%= f.text_field :make %>
+    </p>
+    <p>
+      <%= f.label :model %>
+      <%= f.text_field :model %>
+    </p>
+    <p>
+      <%= f.label :year %>
+      <%= f.text_field :year %>
+    </p>
+    <p>
+      <%= f.label :price %>
+      <%= f.text_field :price %>
+    </p>
+    <%= f.submit %>
+  <% end %>
+<% end %>
